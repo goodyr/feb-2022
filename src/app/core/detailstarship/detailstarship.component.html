@@ -1,0 +1,21 @@
+<div class="species-container">
+    <span class="title">Star Ships</span>
+    <div *ngIf="starships && starships.length == 0; starshipsContainer">
+        <h1>No star ships</h1>
+    </div>
+    <div #starshipsContainer *ngFor="let item of starships" class="vehicle-container">
+        <h1>{{item.name}}</h1>
+        <p><b>Model:</b> {{item.model}}</p>
+        <p><b>manufacturer:</b> {{item.manufacturer}}</p>
+        <p><b>cost in credits:</b> {{item.cost_in_credits}}</p>
+        <p><b>length:</b> {{item.length}}</p>
+        <p><b>max atmosphering speed:</b> {{item.max_atmosphering_speed}}</p>
+        <p><b>crew:</b> {{item.crew}}</p>
+        <p><b>passengers:</b> {{item.passengers}}</p>
+        <p><b>cargo capacity:</b> {{item.cargo_capacity}}</p>
+        <p><b>consumables:</b> {{item.consumables}}</p>
+        <p><b>hyperdrive rating:</b> {{item.hyperdrive_rating}}</p>
+        <p><b>MGLT:</b> {{item.MGLT}}</p>
+        <p><b>starship class:</b> {{item.starship_class}}</p>
+    </div>
+</div>

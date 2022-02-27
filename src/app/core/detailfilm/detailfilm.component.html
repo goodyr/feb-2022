@@ -1,0 +1,13 @@
+<div class="film-container">
+    <span class="title">Films</span>
+    <div *ngIf="films.length == 0; filmContainer">
+        <h1>No films</h1>
+    </div>
+    <div #filmContainer *ngFor="let item of films" class="film-container">
+        <h1>{{item.title}}</h1>
+        <p><b>Opening crawl:</b> {{item.opening_crawl}}</p>
+        <p><b>Director:</b> {{item.director}}</p>
+        <p><b>Producer:</b> {{item.producer}}</p>
+        <p><b>Release date:</b> {{item.release_date}}</p>
+    </div>
+</div>

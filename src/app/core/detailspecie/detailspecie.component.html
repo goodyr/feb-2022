@@ -1,0 +1,17 @@
+<div class="species-container">
+    <span class="title">species</span>
+    <div *ngIf="species.length == 0; specieContainer">
+        <h1>No species</h1>
+    </div>
+    <div #specieContainer *ngFor="let item of species" class="specie-container">
+        <h1>{{item.name}}</h1>
+        <p><b>classification:</b> {{item.classification}}</p>
+        <p><b>designation:</b> {{item.designation}}</p>
+        <p><b>average height:</b> {{item.average_height}}</p>
+        <p><b>skin colors:</b> {{item.skin_colors}}</p>
+        <p><b>hair colors:</b> {{item.hair_colors}}</p>
+        <p><b>eye colors:</b> {{item.eye_colors}}</p>
+        <p><b>average lifespan:</b> {{item.average_lifespan}}</p>
+        <p><b>language:</b> {{item.language}}</p>
+    </div>
+</div>

@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+*{
+    font-size: 12px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+span.title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.p-card .p-card-title {
+    font-size: 2.5rem !important;
+}

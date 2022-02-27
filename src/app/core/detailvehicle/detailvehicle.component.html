@@ -1,0 +1,19 @@
+<div class="vehicles-container">
+    <span class="title">Vehicles</span>
+    <div *ngIf="vehicles.length == 0; vehiclesContainer">
+        <h1>No vehicles</h1>
+    </div>
+    <div #vehiclesContainer *ngFor="let item of vehicles" class="vehicle-container">
+        <h1>{{item.name}}</h1>
+        <p><b>Model:</b> {{item.model}}</p>
+        <p><b>manufacturer:</b> {{item.manufacturer}}</p>
+        <p><b>cost in credits:</b> {{item.cost_in_credits}}</p>
+        <p><b>length:</b> {{item.length}}</p>
+        <p><b>max atmosphering speed:</b> {{item.max_atmosphering_speed}}</p>
+        <p><b>crew:</b> {{item.crew}}</p>
+        <p><b>passengers:</b> {{item.passengers}}</p>
+        <p><b>cargo capacity:</b> {{item.cargo_capacity}}</p>
+        <p><b>consumables:</b> {{item.consumables}}</p>
+        <p><b>vehicle class:</b> {{item.vehicle_class}}</p>
+    </div>
+</div>

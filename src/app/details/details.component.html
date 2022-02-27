@@ -1,0 +1,49 @@
+<div *ngIf="character">
+    <p-card styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+            <div class="p-card-title flex justify-content-between padding-1">
+                <span class="title">{{character.name}}</span>
+                <p-button label="Go back" icon="pi pi-undo" styleClass="p-button-secondary" [routerLink]="'/'"
+                [style]="{'margin-left': '.5em'}"></p-button>
+            </div>
+        </ng-template>
+        
+
+        <div class="character-container">
+            <p><b>Height: </b>{{character.height}}</p>
+            <p><b>Mass: </b>{{character.mass}}</p>
+            <h3 class="underline">Characterics</h3>
+            <p><b>Hair color: </b>{{character.hair_color}}</p>
+            <p><b>Skin color: </b>{{character.skin_color}}</p>
+            <p><b>Eye color: </b>{{character.eye_color}}</p>
+        </div>
+            
+        <div class="moreinfo-container">
+            <p-progressSpinner *ngIf="loadingData"></p-progressSpinner>
+    
+            <div *ngIf="moreDetailInfo && !loadingData">
+                <div class="grid">
+                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                        <app-detailhomeworld [homeworld]="moreDetailInfo.homeWorld"></app-detailhomeworld>
+                    </div>
+                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                        <app-detailfilm [films]="moreDetailInfo?.films || []"></app-detailfilm>
+                    </div>
+                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                        <app-detailspecie [species]="moreDetailInfo?.species || []"></app-detailspecie>
+                    </div>
+                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                        <app-detailstarship [starships]="moreDetailInfo?.starShips || []"></app-detailstarship>
+                    </div>
+                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                        <app-detailvehicle [vehicles]="moreDetailInfo?.vehicles || []"></app-detailvehicle>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ng-template pTemplate="footer">
+            <p-button *ngIf="!moreDetailInfo" [disabled]="loadingData" label="More info" icon="pi pi-info-circle" (onClick)="getMoreDetails()"></p-button>
+        </ng-template>
+    </p-card>
+</div>

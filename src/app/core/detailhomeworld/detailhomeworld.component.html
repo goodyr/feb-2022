@@ -1,0 +1,12 @@
+<div *ngIf="!homeworld">
+    <h1>No homeworld</h1>
+</div>
+<div class="homeworld-container">
+    <span class="title">Home world</span>
+    <h1>{{homeworld.name}}</h1>
+    <p><b>Population:</b> {{homeworld.population}}</p>
+    <p><b>Rotation period:</b> {{homeworld.rotation_period}}</p>
+    <p><b>Orbital time:</b> {{homeworld.orbital_period}}</p>
+    <p><b>Climate:</b> {{homeworld.climate}}</p>
+    <p><b>Diameter:</b> {{homeworld.diameter}}</p>
+</div>
