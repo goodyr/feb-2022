@@ -22,20 +22,20 @@
             <p-progressSpinner *ngIf="loadingData"></p-progressSpinner>
     
             <div *ngIf="moreDetailInfo && !loadingData">
-                <div class="grid">
-                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                <div class="grid flex flex-wrap">
+                    <div class="detail-container">
                         <app-detailhomeworld [homeworld]="moreDetailInfo.homeWorld"></app-detailhomeworld>
                     </div>
-                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                    <div class="detail-container">
                         <app-detailfilm [films]="moreDetailInfo?.films || []"></app-detailfilm>
                     </div>
-                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                    <div class="detail-container">
                         <app-detailspecie [species]="moreDetailInfo?.species || []"></app-detailspecie>
                     </div>
-                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                    <div class="detail-container">
                         <app-detailstarship [starships]="moreDetailInfo?.starShips || []"></app-detailstarship>
                     </div>
-                    <div class="col-10 md:col-6 lg:col-2 detail-container">
+                    <div class="detail-container">
                         <app-detailvehicle [vehicles]="moreDetailInfo?.vehicles || []"></app-detailvehicle>
                     </div>
                 </div>

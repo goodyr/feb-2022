@@ -27,9 +27,19 @@
         </td>
       </tr>
     </ng-template>
+
+    <ng-template pTemplate="emptymessage" let-columns>
+      <tr>
+        <td colspan="4">
+           No records found
+        </td>
+      </tr>
+    </ng-template>
   </p-table>
 </p-card>
 <div class="flex align-items-center mt-6">
   <p-button [disabled]="previousUrl == null" (onClick)="prev()" class="mr-2">Previous</p-button>
   <p-button [disabled]="nextUrl == null" (onClick)="next()">Next</p-button>
+
+  <span class="pages-container"> {{currentPage}} / {{totalPages}} </span>
 </div>

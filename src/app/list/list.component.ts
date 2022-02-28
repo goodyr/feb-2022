@@ -22,6 +22,8 @@ export class ListComponent implements OnInit {
   @ViewChild("globalSearchInput") globalSearchInput!: ElementRef;
   source?: Observable<string>;
   searchEnabled: boolean = false;
+  currentPage: number = 1;
+  totalPages: number = 0;
 
 
   constructor(
@@ -73,6 +75,8 @@ export class ListComponent implements OnInit {
     for (var item of this.characters)
       item.id = Number.parseInt(item.url.match(/\d+/g)![0]);
 
+    this.totalPages = Math.round( response.count / 10 ) + 1;
+
     this.nextUrl = response.next;
     this.previousUrl = response.previous;
   }
@@ -85,6 +89,8 @@ export class ListComponent implements OnInit {
 
   private setPage(url: string): number {
     const page = this.getPageFromUrl(url);
+
+    this.currentPage = page;
     this.listService.set(page);
     return page;
   }
